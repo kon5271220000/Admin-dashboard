@@ -4,87 +4,291 @@
     box-sizing: border-box;
 }
 
-body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
 }
 
-.container {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    width: 100vw;
+.sidebar {
+    grid-row: 1/ span 2;
+    background-color: #b91c1c;
+    color: #fff;
+    padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 4fr; /* Sidebar chiếm 250px, Main content chiếm phần còn lại */
-    grid-template-rows: 150px 1fr; /* Header chiếm 60px, phần còn lại cho main content */
-    grid-template-areas: 
-    "side-bar header"
-    "side-bar main-content";
+    gap: 20px;
+    grid-template-rows: 1fr 2fr 4fr;
 }
 
-.side-bar {
-    background: skyblue;
-    grid-area: side-bar;
+.dashboard-icon {
     display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: center; 
+    gap: 8px;
 }
+
+
+.dashboard-icon a {
+    text-decoration: none; 
+    color: white; 
+    font-size: 48px; 
+    font-weight: bold; 
+}
+
+.side-bar-menu {
+    display: grid;
+    grid-template-columns: auto 1fr; 
+    align-items: center; 
+    gap: 8px;
+}
+
+.navigator-1 a {
+    text-decoration: none; 
+    color: white; 
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+.side-bar-menu {
+    padding: 10px;
+}
+
+.navigator-2 {
+    margin-top: 40px;
+}
+
+.navigator-2 a {
+    text-decoration: none; 
+    color: white; 
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+
 
 .header {
-    background: white;
-    grid-area: header;
-}
-
-.main-content {
     padding: 20px;
-    background: gray;
-    grid-area: main-content;
+    grid-column: 2/ 3;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: 
-    "your-project announcements"
-    "your-project trending";
-    box-sizing: border-box;
+    padding-left: 64px;
 }
 
-.your-project {
-    padding-right: 10px;
-    grid-area: your-project;
+.upper-header {
     display: grid;
-    gap: 20px;
-    grid-template-rows: 0.5fr 12fr;
+    grid-template-columns: 2fr 1fr;
+    padding-bottom: 20px;
 }
 
-.your-prj-container {
+.search-header {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.search-header input {
+    width: 600px;
+    height: 32px;
+    border-radius: 20px;
+    border: none;
+    background-color: #fca5a5;
+}
+
+.porfofile {
+    padding-left: 100px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.porfofile img {
+    width: 64px; 
+    height: 64px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid black; 
+}
+
+.lower-header {
     display: grid;
-    gap: 20px;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
 }
 
-.prj {
-    background-color: white;
-    border: solid;
-    border-radius: 10px;
+.greeting-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
+
+.greeting-header p {
+    padding-bottom: 20px;
+}
+
+.greeting-header img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid black;
+}
+
+.header-btn {
+    padding-right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.header-btn button {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #991b1b;
+    color: white;
+    width: 96px;
+    height: 32px;
+    border: 2px none;
+    border-radius: 20px;
+}
+
+.main {
+    grid-column: 2/3 ;
+    grid-row: 2/3;
+    padding: 20px;
+    padding-bottom: 60px;
+    padding-right: 60px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    background-color: #fecaca;
+}
+
+.card-container {
+    grid-column:1/2;
+    grid-row: 1/ span 2;
+    display: grid;
+    grid-template-rows: 40px auto;
+}
+
+.card-container h3 {
+    grid-column: 1/span 2;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    border-left: 10px solid black;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 0.5fr ;
+}
+
+.card h4 {
+    margin-left: 24px;
+    margin-right: 24px;
+    padding-top: 24px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card p {
+    margin-left: 24px;
+    margin-right: 24px;
+    color: #666;
+    font-size: 14px;
+}
+
+.card-btn {
+    margin-right: 24px;
+    display: flex;
+    justify-content: end; 
+    align-items: center; 
+    gap: 16px; 
+    color: #333;
+}
+
 
 .announcements {
-    padding-right: 10px;
-    grid-area: announcements;
+    grid-column: 2/2;
+    grid-row: 1/2;
     display: grid;
-    grid-template-rows: 0.5fr 9fr;
+    grid-template-rows: 40px auto;
+    grid-template-columns: 1fr;
 }
 
 .announcements h3 {
-    padding-bottom: 30px;
+    grid-column: 1/span 2;
 }
 
 .announcements-container {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center; 
     background-color: white;
-    border: solid;
     border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+}
+
+.announcements-container div {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.announcements-container hr {
+    border: none;           
+    height: 2px;            
+    background-color: #ef4444; 
+    margin: 10px 0;    
 }
 
 .trending {
-    grid-area: trending;
+    grid-column: 2/2;
     display: grid;
+    grid-template-rows: 40px auto;
+    grid-template-columns: 1fr;
+}
+
+.trending h3 {
+    grid-column: 1/ span 2;
+}
+
+.trending-container {
+    display: grid;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); 
+    gap: 20px;
+}
+
+.trending-container img {
+    width: 64px; 
+    height: 64px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid black; 
+}
+
+.trending-avatar {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.trending-avatar p {
+    color: grey;
+    padding-top: 10px;
 }
